@@ -8,12 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		661A77EC2353322E0042D280 /* AdHash_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 661A77EA2353322E0042D280 /* AdHash_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		661A781B2353326B0042D280 /* AdHashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A77FE2353326B0042D280 /* AdHashManager.swift */; };
+		661A781C2353326B0042D280 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A77FF2353326B0042D280 /* EventManager.swift */; };
+		661A781D2353326B0042D280 /* FirstStepResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78012353326B0042D280 /* FirstStepResponseModel.swift */; };
+		661A781E2353326B0042D280 /* AdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78022353326B0042D280 /* AdRequestModel.swift */; };
+		661A781F2353326B0042D280 /* GetAdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78032353326B0042D280 /* GetAdResponseModel.swift */; };
+		661A78202353326B0042D280 /* CharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78052353326B0042D280 /* CharacterSetExtensions.swift */; };
+		661A78212353326B0042D280 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78062353326B0042D280 /* DictionaryExtensions.swift */; };
+		661A78222353326B0042D280 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78072353326B0042D280 /* StringExtensions.swift */; };
+		661A78232353326B0042D280 /* DeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78082353326B0042D280 /* DeviceExtensions.swift */; };
+		661A78242353326B0042D280 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78092353326B0042D280 /* Reachability.swift */; };
+		661A78252353326B0042D280 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780A2353326B0042D280 /* UIApplicationExtensions.swift */; };
+		661A78262353326B0042D280 /* AdHashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780C2353326B0042D280 /* AdHashView.swift */; };
+		661A78272353326B0042D280 /* AdHashViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780E2353326B0042D280 /* AdHashViewDelegate.swift */; };
+		661A78282353326B0042D280 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78112353326B0042D280 /* ConnectionService.swift */; };
+		661A78292353326B0042D280 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78142353326B0042D280 /* NetworkManager.swift */; };
+		661A782A2353326B0042D280 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78162353326B0042D280 /* RequestBuilder.swift */; };
+		661A782B2353326B0042D280 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78172353326B0042D280 /* HTTPMethod.swift */; };
+		661A782C2353326B0042D280 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 661A78192353326B0042D280 /* index.html */; };
+		661A782D2353326B0042D280 /* DecryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A781A2353326B0042D280 /* DecryptionViewController.swift */; };
+		66C597D123534C50007CAF0D /* RecentAdModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66C597CF23534C50007CAF0D /* RecentAdModel.xcdatamodeld */; };
+		66C597D823534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597D623534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift */; };
+		66C597D923534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597D723534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift */; };
+		66C597DD23534EF3007CAF0D /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597DC23534EF3007CAF0D /* CoreDataService.swift */; };
+		66C597DF2353512D007CAF0D /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597DE2353512D007CAF0D /* PersistenceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		661A77E72353322E0042D280 /* AdHash_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdHash_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661A77E72353322E0042D280 /* AdHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		661A77EA2353322E0042D280 /* AdHash_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdHash_iOS.h; sourceTree = "<group>"; };
 		661A77EB2353322E0042D280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		661A77FE2353326B0042D280 /* AdHashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashManager.swift; sourceTree = "<group>"; };
+		661A77FF2353326B0042D280 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		661A78012353326B0042D280 /* FirstStepResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstStepResponseModel.swift; sourceTree = "<group>"; };
+		661A78022353326B0042D280 /* AdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdRequestModel.swift; sourceTree = "<group>"; };
+		661A78032353326B0042D280 /* GetAdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdResponseModel.swift; sourceTree = "<group>"; };
+		661A78052353326B0042D280 /* CharacterSetExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetExtensions.swift; sourceTree = "<group>"; };
+		661A78062353326B0042D280 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		661A78072353326B0042D280 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		661A78082353326B0042D280 /* DeviceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceExtensions.swift; sourceTree = "<group>"; };
+		661A78092353326B0042D280 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		661A780A2353326B0042D280 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		661A780C2353326B0042D280 /* AdHashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashView.swift; sourceTree = "<group>"; };
+		661A780E2353326B0042D280 /* AdHashViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashViewDelegate.swift; sourceTree = "<group>"; };
+		661A78112353326B0042D280 /* ConnectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
+		661A78142353326B0042D280 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		661A78162353326B0042D280 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		661A78172353326B0042D280 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		661A78192353326B0042D280 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		661A781A2353326B0042D280 /* DecryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptionViewController.swift; sourceTree = "<group>"; };
+		66C597D023534C50007CAF0D /* RecentAdModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecentAdModel.xcdatamodel; sourceTree = "<group>"; };
+		66C597D623534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		66C597D723534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		66C597DC23534EF3007CAF0D /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		66C597DE2353512D007CAF0D /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +86,7 @@
 		661A77E82353322E0042D280 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				661A77E72353322E0042D280 /* AdHash_iOS.framework */,
+				661A77E72353322E0042D280 /* AdHash.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,10 +94,146 @@
 		661A77E92353322E0042D280 /* AdHash-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				66C597CE23534C2C007CAF0D /* CoreData */,
+				661A77FD2353326B0042D280 /* Configuration */,
+				661A78002353326B0042D280 /* Models */,
+				661A78042353326B0042D280 /* Extensions */,
+				661A780B2353326B0042D280 /* Views */,
+				661A780F2353326B0042D280 /* Services */,
 				661A77EA2353322E0042D280 /* AdHash_iOS.h */,
 				661A77EB2353322E0042D280 /* Info.plist */,
 			);
 			path = "AdHash-iOS";
+			sourceTree = "<group>";
+		};
+		661A77FD2353326B0042D280 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				661A77FE2353326B0042D280 /* AdHashManager.swift */,
+				661A77FF2353326B0042D280 /* EventManager.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		661A78002353326B0042D280 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				661A78012353326B0042D280 /* FirstStepResponseModel.swift */,
+				661A78022353326B0042D280 /* AdRequestModel.swift */,
+				661A78032353326B0042D280 /* GetAdResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		661A78042353326B0042D280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				661A78052353326B0042D280 /* CharacterSetExtensions.swift */,
+				661A78062353326B0042D280 /* DictionaryExtensions.swift */,
+				661A78072353326B0042D280 /* StringExtensions.swift */,
+				661A78082353326B0042D280 /* DeviceExtensions.swift */,
+				661A78092353326B0042D280 /* Reachability.swift */,
+				661A780A2353326B0042D280 /* UIApplicationExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		661A780B2353326B0042D280 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				661A780C2353326B0042D280 /* AdHashView.swift */,
+				661A780D2353326B0042D280 /* Delegates */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		661A780D2353326B0042D280 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				661A780E2353326B0042D280 /* AdHashViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		661A780F2353326B0042D280 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				661A78102353326B0042D280 /* Connection */,
+				661A78122353326B0042D280 /* Networking */,
+				661A78182353326B0042D280 /* Decryption */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		661A78102353326B0042D280 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				661A78112353326B0042D280 /* ConnectionService.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		661A78122353326B0042D280 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				661A78132353326B0042D280 /* Manager */,
+				661A78152353326B0042D280 /* RequestBuilder */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		661A78132353326B0042D280 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				661A78142353326B0042D280 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		661A78152353326B0042D280 /* RequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				661A78162353326B0042D280 /* RequestBuilder.swift */,
+				661A78172353326B0042D280 /* HTTPMethod.swift */,
+			);
+			path = RequestBuilder;
+			sourceTree = "<group>";
+		};
+		661A78182353326B0042D280 /* Decryption */ = {
+			isa = PBXGroup;
+			children = (
+				661A78192353326B0042D280 /* index.html */,
+				661A781A2353326B0042D280 /* DecryptionViewController.swift */,
+			);
+			path = Decryption;
+			sourceTree = "<group>";
+		};
+		66C597CE23534C2C007CAF0D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				66C597DB23534EE5007CAF0D /* Services */,
+				66C597DA23534EDC007CAF0D /* Resources */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		66C597DA23534EDC007CAF0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66C597D623534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift */,
+				66C597D723534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift */,
+				66C597CF23534C50007CAF0D /* RecentAdModel.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		66C597DB23534EE5007CAF0D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				66C597DE2353512D007CAF0D /* PersistenceService.swift */,
+				66C597DC23534EF3007CAF0D /* CoreDataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,7 +265,7 @@
 			);
 			name = "AdHash-iOS";
 			productName = "AdHash-iOS";
-			productReference = 661A77E72353322E0042D280 /* AdHash_iOS.framework */;
+			productReference = 661A77E72353322E0042D280 /* AdHash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -121,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661A782C2353326B0042D280 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +316,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661A78272353326B0042D280 /* AdHashViewDelegate.swift in Sources */,
+				661A78232353326B0042D280 /* DeviceExtensions.swift in Sources */,
+				661A78222353326B0042D280 /* StringExtensions.swift in Sources */,
+				661A781C2353326B0042D280 /* EventManager.swift in Sources */,
+				661A78212353326B0042D280 /* DictionaryExtensions.swift in Sources */,
+				66C597D823534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift in Sources */,
+				661A78252353326B0042D280 /* UIApplicationExtensions.swift in Sources */,
+				66C597D923534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift in Sources */,
+				66C597DD23534EF3007CAF0D /* CoreDataService.swift in Sources */,
+				661A781F2353326B0042D280 /* GetAdResponseModel.swift in Sources */,
+				661A78282353326B0042D280 /* ConnectionService.swift in Sources */,
+				661A78202353326B0042D280 /* CharacterSetExtensions.swift in Sources */,
+				661A78262353326B0042D280 /* AdHashView.swift in Sources */,
+				661A781D2353326B0042D280 /* FirstStepResponseModel.swift in Sources */,
+				661A781E2353326B0042D280 /* AdRequestModel.swift in Sources */,
+				661A782B2353326B0042D280 /* HTTPMethod.swift in Sources */,
+				661A78292353326B0042D280 /* NetworkManager.swift in Sources */,
+				661A78242353326B0042D280 /* Reachability.swift in Sources */,
+				661A782D2353326B0042D280 /* DecryptionViewController.swift in Sources */,
+				66C597D123534C50007CAF0D /* RecentAdModel.xcdatamodeld in Sources */,
+				661A781B2353326B0042D280 /* AdHashManager.swift in Sources */,
+				66C597DF2353512D007CAF0D /* PersistenceService.swift in Sources */,
+				661A782A2353326B0042D280 /* RequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,13 +476,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "AdHash-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ds.AdHash-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = AdHash;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -292,13 +501,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "AdHash-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ds.AdHash-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = AdHash;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,6 +537,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		66C597CF23534C50007CAF0D /* RecentAdModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				66C597D023534C50007CAF0D /* RecentAdModel.xcdatamodel */,
+			);
+			currentVersion = 66C597D023534C50007CAF0D /* RecentAdModel.xcdatamodel */;
+			path = RecentAdModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 661A77DE2353322E0042D280 /* Project object */;
 }

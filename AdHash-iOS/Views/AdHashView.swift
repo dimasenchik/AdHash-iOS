@@ -9,13 +9,13 @@
 import UIKit
 import SafariServices
 
-final class AdHashView: UIView {
+public class AdHashView: UIView {
 
     //MARK: - Properties
-    let adTagId: String = ""
+    public var adTagId: String = ""
 	private var adInfo = AdRequestModel()
 	
-    weak var delegate: AdHashViewDelegate? {
+    weak public var delegate: AdHashViewDelegate? {
         didSet {
 			AdHashManager.configurateManager(didGetData: { [weak self] adModel in
 				DispatchQueue.main.async {
@@ -30,7 +30,7 @@ final class AdHashView: UIView {
 	private var bannerImage = UIImageView()
     
     //MARK: - Life cycle
-	override func awakeFromNib() {
+	override open func awakeFromNib() {
 		bannerImage.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
 		bannerImage.clipsToBounds = true
 		bannerImage.contentMode = .scaleToFill
@@ -69,6 +69,9 @@ final class AdHashView: UIView {
 	@objc private func tapOnBanner(touch: UITapGestureRecognizer) {
 		if adInfo.bannerURL != "" {
 			EventManager.getClickableURL(adInfo: adInfo, tapCoordinates: touch.location(in: self)) { [weak self] (clickableURL) in
+				if let adId = self?.adInfo.adTagId {
+					self?.delegate?.didClickOnAd(adId: adId)
+				}
 				let safariController = SFSafariViewController(url: clickableURL)
 				self?.delegate?.present(safariController, animated: true, completion: nil)
 			}

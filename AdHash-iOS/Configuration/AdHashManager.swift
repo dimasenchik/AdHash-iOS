@@ -14,7 +14,7 @@ open class AdHashManager {
     
     //MARK: - Properties
     public static var timeZone: Int = TimeZone.current.secondsFromGMT()/3600
-	public static var location: String! {
+	public static var location: String {
 		if let id = Bundle.main.bundleIdentifier {
 			return id
 		} else {
@@ -24,19 +24,19 @@ open class AdHashManager {
     public static var publisherID: String = ""
     public static var screenWidth: CGFloat = UIScreen.main.bounds.width
     public static var screenHeight: CGFloat = UIScreen.main.bounds.height
-    public static var platform: String! {
+    public static var platform: String {
         return UIDevice.current.model
     }
-    public static var language: String! {
+    public static var language: String {
         return Locale.current.identifier
     }
-    private static var device: String! {
+    private static var device: String {
         return "Apple"
     }
-    public static var model: String! {
+    public static var model: String {
         return UIDevice.current.type.rawValue
     }
-    public static var type: String! {
+    public static var type: String {
         if UIDevice.current.model == "iPhone" {
             return "mobile"
         } else {
@@ -44,21 +44,21 @@ open class AdHashManager {
         }
     }
     public static var connection: String = ConnectionService.getConnectionType()
-    public static var isp: String! {
+    public static var isp: String {
         if let carrierName = ConnectionService.getCarrierName() {
             return carrierName
         } else {
             return ""
         }
     }
-    public static var orientation: String! {
+    public static var orientation: String {
         if UIDevice.current.orientation.isPortrait {
             return "portrait"
         } else {
             return "landscape"
         }
     }
-    public static var gps: String! {
+    public static var gps: String {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
@@ -79,7 +79,9 @@ open class AdHashManager {
     private static var isMobile: Bool = true
     public static var blockedAdvertisers: [String] = []
     public static var currentTimestamp: String = "\(Int(Date().timeIntervalSince1970))"
-    public static var recentAds: [[String: String]] = [[:]]
+	public static var recentAds: [[Any]] {
+		return CoreDataService.getRecentAds()
+	}
 	public static var apiVersion: Float = 1.0
 	
 	//Configuration links
@@ -95,36 +97,17 @@ open class AdHashManager {
     //MARK: - Public methods
 	static func configurateManager(didGetData: @escaping ((AdRequestModel) -> Void)) {
 		if !UIAccessibility.isVoiceOverRunning {
-			
-			guard let location = AdHashManager.location else { return }
-			
-			guard let orientation = AdHashManager.orientation else { return }
-			
-			guard let gps = AdHashManager.gps else { return }
-			
-			guard let platform = AdHashManager.platform else { return }
-			
-			guard let language = AdHashManager.language else { return }
-			
-			guard let device = AdHashManager.device else { return }
-			
-			guard let model = AdHashManager.model else { return }
-			
-			guard let type = AdHashManager.type else { return }
-			
-			guard let isp = AdHashManager.isp else { return }
-			
 			let body: [String: Any] =
 				[
 					"timezone": timeZone,
-					"location": location,
+					"location": AdHashManager.location,
 					"publisherId": publisherID,
 					"size": ["screenWidth": screenWidth, "screenHeight": screenHeight],
-					"navigator": ["platform": platform, "language": language, "device": device, "model": model, "type": type],
+					"navigator": ["platform": AdHashManager.platform, "language": AdHashManager.language, "device": AdHashManager.device, "model": AdHashManager.model, "type": AdHashManager.type],
 					"connection": connection,
-					"isp": isp,
-					"orientation": orientation,
-					"gps": gps,
+					"isp": AdHashManager.isp,
+					"orientation": AdHashManager.orientation,
+					"gps": AdHashManager.gps,
 					"creatives": [["size": "\(Int(bannerWidth))x\(Int(bannerHeight))"]],
 					"mobile": isMobile,
 					"blockedAdvertisers": blockedAdvertisers,
@@ -155,6 +138,7 @@ open class AdHashManager {
 			}
 			
 			shared.didGetAdInfo = {
+				CoreDataService.addNewAd(adInfo: shared.adInfoModel)
 				didGetData(shared.adInfoModel)
 			}
 			
@@ -163,37 +147,19 @@ open class AdHashManager {
 	}
     
     private func getAd(advertiserURL: String, expectedHashes: [String], budgetId: Int, period: Int, nonce: Int) {
-		guard let location = AdHashManager.location else { return }
-		
-        guard let orientation = AdHashManager.orientation else { return }
-        
-        guard let gps = AdHashManager.gps else { return }
-        
-        guard let platform = AdHashManager.platform else { return }
-        
-        guard let language = AdHashManager.language else { return }
-        
-        guard let device = AdHashManager.device else { return }
-        
-        guard let model = AdHashManager.model else { return }
-        
-        guard let type = AdHashManager.type else { return }
-        
-        guard let isp = AdHashManager.isp else { return }
-        
         let body: [String: Any] =
             [
                 "expectedHashes": expectedHashes,
                 "budgetId": budgetId,
                 "timezone": AdHashManager.timeZone,
-                "location": location,
+                "location": AdHashManager.location,
                 "publisherId": AdHashManager.publisherID,
 				"size": ["screenWidth": AdHashManager.screenWidth, "screenHeight": AdHashManager.screenHeight],
-                "navigator": ["platform": platform, "language": language, "device": device, "model": model, "type": type],
+                "navigator": ["platform": AdHashManager.platform, "language": AdHashManager.language, "device": AdHashManager.device, "model": AdHashManager.model, "type": AdHashManager.type],
                 "connection": AdHashManager.connection,
-                "isp": isp,
-                "orientation": orientation,
-                "gps": gps,
+                "isp": AdHashManager.isp,
+                "orientation": AdHashManager.orientation,
+                "gps": AdHashManager.gps,
                 "creatives": [["size": "\(Int(AdHashManager.bannerWidth))x\(Int(AdHashManager.bannerHeight))"]],
                 "mobile": AdHashManager.isMobile,
                 "blockedAdvertisers": AdHashManager.blockedAdvertisers,
@@ -233,35 +199,17 @@ open class AdHashManager {
     }
     
 	private func decryptAdvertiserURL(encodedUrl: String, period: Int, nonce: Int, adID: String) {
-		guard let location = AdHashManager.location else { return }
-		
-        guard let orientation = AdHashManager.orientation else { return }
-        
-        guard let gps = AdHashManager.gps else { return }
-        
-        guard let platform = AdHashManager.platform else { return }
-        
-        guard let language = AdHashManager.language else { return }
-        
-        guard let device = AdHashManager.device else { return }
-        
-        guard let model = AdHashManager.model else { return }
-        
-        guard let type = AdHashManager.type else { return }
-        
-        guard let isp = AdHashManager.isp else { return }
-        
         let body: [String: Any] =
             [
                 "timezone": AdHashManager.timeZone,
-                "location": location,
+                "location": AdHashManager.location,
                 "publisherId": AdHashManager.publisherID,
                 "size": ["screenWidth": AdHashManager.screenWidth, "screenHeight": AdHashManager.screenHeight],
-                "navigator": ["platform": platform, "language": language, "device": device, "model": model, "type": type],
+                "navigator": ["platform": AdHashManager.platform, "language": AdHashManager.language, "device": AdHashManager.device, "model": AdHashManager.model, "type": AdHashManager.type],
                 "connection": AdHashManager.connection,
-                "isp": isp,
-                "orientation": orientation,
-                "gps": gps,
+                "isp": AdHashManager.isp,
+                "orientation": AdHashManager.orientation,
+                "gps": AdHashManager.gps,
                 "creatives": [["size": "\(Int(AdHashManager.bannerWidth))x\(Int(AdHashManager.bannerHeight))"]],
                 "mobile": AdHashManager.isMobile,
                 "blockedAdvertisers": AdHashManager.blockedAdvertisers,
