@@ -69,3 +69,8 @@
 |  bidderURL |  String |
 |  publisherURL | String  |
 |  reportURL | String  |
+
+#### Available delegate methods:
+    func didClickOnAd(adId: String)
+    func didClickOnReport(adId: String)
+
