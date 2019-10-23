@@ -29,8 +29,8 @@ public class AdHashView: UIView {
         }
     }
 	
-	private var bannerImage = UIImageView()
 	private var logoImage = UIImageView()
+	private var bannerImage = UIImageView()
     
     //MARK: - Life cycle
 	override open func awakeFromNib() {
