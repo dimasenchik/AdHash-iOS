@@ -24,7 +24,7 @@ final class CoreDataService {
 	static func getRecentAds() -> [[Any]] {
 		let fetchRequest: NSFetchRequest<RecentAdModel> = RecentAdModel.fetchRequest()
 		do {
-			var availableAds: [[Any]] = [[]]
+			var availableAds: [[Any]] = []
 			var adsToRemove: [RecentAdModel] = []
 			let adsData = try PersistenceService.context.fetch(fetchRequest)
 			adsData.forEach { (ad) in

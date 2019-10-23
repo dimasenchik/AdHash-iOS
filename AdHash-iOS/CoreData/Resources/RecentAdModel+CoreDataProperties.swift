@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension RecentAdModel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RecentAdModel> {

@@ -11,4 +11,5 @@ import UIKit
 
 public protocol AdHashViewDelegate: UIViewController {
     func didClickOnAd(adId: String)
+	func didClickOnReport(adId: String)
 }

@@ -17,26 +17,38 @@ public class AdHashView: UIView {
 	
     weak public var delegate: AdHashViewDelegate? {
         didSet {
+			configureAdManger()
 			AdHashManager.configurateManager(didGetData: { [weak self] adModel in
 				DispatchQueue.main.async {
 					self?.adInfo = adModel
 					self?.configureGestures()
 					self?.setBannerImage()
+					self?.setLogo()
 				}
 			})
         }
     }
 	
 	private var bannerImage = UIImageView()
+	private var logoImage = UIImageView()
     
     //MARK: - Life cycle
 	override open func awakeFromNib() {
 		bannerImage.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
-		bannerImage.clipsToBounds = true
-		bannerImage.contentMode = .scaleToFill
+		bannerImage.isUserInteractionEnabled = true
 		self.addSubview(bannerImage)
-		configureAdManger()
+		bannerImage.translatesAutoresizingMaskIntoConstraints = false
+		let trailingConstraint = bannerImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+		let leadingConstraint = bannerImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0)
+		let topConstraint = bannerImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0)
+		let bottomConstraint = bannerImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+		NSLayoutConstraint.activate([trailingConstraint, leadingConstraint, topConstraint, bottomConstraint])
+		self.layoutSubviews()
+		logoImage.frame = CGRect(x: 10, y: self.frame.size.height - 30, width: 20, height: 20)
+		logoImage.isUserInteractionEnabled = true
+		self.addSubview(logoImage)
 		NotificationCenter.default.addObserver(self, selector: #selector(screenshotTaken), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+		setLogo()
 	}
     
     //MARK: - Private methods
@@ -59,13 +71,20 @@ public class AdHashView: UIView {
 		let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(tapOnBanner))
 		swipeRightGesture.direction = .down
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnBanner))
-		self.addGestureRecognizer(swipeRightGesture)
-		self.addGestureRecognizer(swipeLeftGesture)
-		self.addGestureRecognizer(swipeUpGesture)
-		self.addGestureRecognizer(swipeDownGesture)
-        self.addGestureRecognizer(tapGesture)
+		let reportTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnReport))
+		logoImage.addGestureRecognizer(reportTapGesture)
+		bannerImage.addGestureRecognizer(swipeRightGesture)
+		bannerImage.addGestureRecognizer(swipeLeftGesture)
+		bannerImage.addGestureRecognizer(swipeUpGesture)
+		bannerImage.addGestureRecognizer(swipeDownGesture)
+        bannerImage.addGestureRecognizer(tapGesture)
     }
-    
+	
+	private func setLogo() {
+		let logo = UIImage(named: "adhashLogo.pdf")
+		logoImage.image = logo
+	}
+	
 	@objc private func tapOnBanner(touch: UITapGestureRecognizer) {
 		if adInfo.bannerURL != "" {
 			EventManager.getClickableURL(adInfo: adInfo, tapCoordinates: touch.location(in: self)) { [weak self] (clickableURL) in
@@ -75,6 +94,14 @@ public class AdHashView: UIView {
 				let safariController = SFSafariViewController(url: clickableURL)
 				self?.delegate?.present(safariController, animated: true, completion: nil)
 			}
+		}
+	}
+	
+	@objc private func tapOnReport() {
+		if AdHashManager.reportURL != "", let url = URL(string: AdHashManager.reportURL) {
+			delegate?.didClickOnReport(adId: adInfo.adTagId)
+			let safariController = SFSafariViewController(url: url)
+			delegate?.present(safariController, animated: true, completion: nil)
 		}
 	}
 	

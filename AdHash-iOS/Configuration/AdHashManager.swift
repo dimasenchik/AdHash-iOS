@@ -89,6 +89,7 @@ open class AdHashManager {
 	public static var analyticsScreenShotURL: String = ""
 	public static var bidderURL: String = ""
 	public static var publisherURL: String = ""
+	public static var reportURL: String = ""
 	
 	static let shared = AdHashManager()
 	private var didGetAdInfo: () -> () = {}
@@ -126,7 +127,7 @@ open class AdHashManager {
 					shared.adInfoModel.commission = responseModel.creatives[0].commission
 					shared.adInfoModel.nonce = responseModel.nonce
 					shared.adInfoModel.budgetId = responseModel.creatives[0].budgetId
-					shared.adInfoModel.advertiserId = responseModel.creatives[0].advertiserURL
+					shared.adInfoModel.advertiserId = responseModel.creatives[0].advertiserId
 					shared.adInfoModel.bidId = responseModel.creatives[0].bidId
 					
 					shared.getAd(advertiserURL: responseModel.creatives[0].advertiserURL, expectedHashes: responseModel.creatives[0].expectedHashes, budgetId: responseModel.creatives[0].budgetId, period: responseModel.period, nonce: responseModel.nonce)

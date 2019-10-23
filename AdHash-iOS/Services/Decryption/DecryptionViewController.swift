@@ -40,7 +40,7 @@ final class DecryptionViewController: UIViewController, WKScriptMessageHandler {
 	//MARK: - Private methods
 	private func configureWebView() {
 		webView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-		let bundleURL = Bundle.main.resourceURL!.absoluteURL
+		let bundleURL = Bundle(for: type(of: self)).resourceURL!.absoluteURL
 		let htmlFile = bundleURL.appendingPathComponent("index.html")
 		do {
 			let htmlString = try String(contentsOf: htmlFile) +
