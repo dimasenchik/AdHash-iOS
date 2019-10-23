@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		661A77EC2353322E0042D280 /* AdHash_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 661A77EA2353322E0042D280 /* AdHash_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		661A781B2353326B0042D280 /* AdHashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A77FE2353326B0042D280 /* AdHashManager.swift */; };
-		661A781C2353326B0042D280 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A77FF2353326B0042D280 /* EventManager.swift */; };
 		661A781D2353326B0042D280 /* FirstStepResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78012353326B0042D280 /* FirstStepResponseModel.swift */; };
 		661A781E2353326B0042D280 /* AdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78022353326B0042D280 /* AdRequestModel.swift */; };
 		661A781F2353326B0042D280 /* GetAdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78032353326B0042D280 /* GetAdResponseModel.swift */; };
@@ -19,27 +17,28 @@
 		661A78232353326B0042D280 /* DeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78082353326B0042D280 /* DeviceExtensions.swift */; };
 		661A78242353326B0042D280 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78092353326B0042D280 /* Reachability.swift */; };
 		661A78252353326B0042D280 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780A2353326B0042D280 /* UIApplicationExtensions.swift */; };
-		661A78262353326B0042D280 /* AdHashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780C2353326B0042D280 /* AdHashView.swift */; };
-		661A78272353326B0042D280 /* AdHashViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780E2353326B0042D280 /* AdHashViewDelegate.swift */; };
-		661A78282353326B0042D280 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78112353326B0042D280 /* ConnectionService.swift */; };
-		661A78292353326B0042D280 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78142353326B0042D280 /* NetworkManager.swift */; };
-		661A782A2353326B0042D280 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78162353326B0042D280 /* RequestBuilder.swift */; };
-		661A782B2353326B0042D280 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78172353326B0042D280 /* HTTPMethod.swift */; };
-		661A782C2353326B0042D280 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 661A78192353326B0042D280 /* index.html */; };
-		661A782D2353326B0042D280 /* DecryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A781A2353326B0042D280 /* DecryptionViewController.swift */; };
-		66C597D123534C50007CAF0D /* RecentAdModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66C597CF23534C50007CAF0D /* RecentAdModel.xcdatamodeld */; };
-		66C597D823534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597D623534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift */; };
-		66C597D923534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597D723534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift */; };
-		66C597DD23534EF3007CAF0D /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597DC23534EF3007CAF0D /* CoreDataService.swift */; };
-		66C597DF2353512D007CAF0D /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C597DE2353512D007CAF0D /* PersistenceService.swift */; };
+		6695E73923609A6D00A80ED2 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73723609A6D00A80ED2 /* PersistenceService.swift */; };
+		6695E73A23609A6D00A80ED2 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73823609A6D00A80ED2 /* CoreDataService.swift */; };
+		6695E73F23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73B23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift */; };
+		6695E74023609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73C23609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift */; };
+		6695E74123609A7F00A80ED2 /* RecentAdModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73D23609A7F00A80ED2 /* RecentAdModel.xcdatamodeld */; };
+		6695E74423609A8D00A80ED2 /* adhashLogo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6695E74323609A8D00A80ED2 /* adhashLogo.pdf */; };
+		6695E75123609AB400A80ED2 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74723609AB400A80ED2 /* ConnectionService.swift */; };
+		6695E75223609AB400A80ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74A23609AB400A80ED2 /* NetworkManager.swift */; };
+		6695E75323609AB400A80ED2 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74C23609AB400A80ED2 /* RequestBuilder.swift */; };
+		6695E75423609AB400A80ED2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74D23609AB400A80ED2 /* HTTPMethod.swift */; };
+		6695E75523609AB400A80ED2 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6695E74F23609AB400A80ED2 /* index.html */; };
+		6695E75623609AB400A80ED2 /* DecryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75023609AB400A80ED2 /* DecryptionViewController.swift */; };
+		6695E75B23609AD200A80ED2 /* AdHashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75823609AD200A80ED2 /* AdHashView.swift */; };
+		6695E75C23609AD200A80ED2 /* AdHashViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75A23609AD200A80ED2 /* AdHashViewDelegate.swift */; };
+		6695E76023609AE900A80ED2 /* AdHashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75E23609AE900A80ED2 /* AdHashManager.swift */; };
+		6695E76123609AE900A80ED2 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75F23609AE900A80ED2 /* EventManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		661A77E72353322E0042D280 /* AdHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		661A77EA2353322E0042D280 /* AdHash_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdHash_iOS.h; sourceTree = "<group>"; };
 		661A77EB2353322E0042D280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		661A77FE2353326B0042D280 /* AdHashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashManager.swift; sourceTree = "<group>"; };
-		661A77FF2353326B0042D280 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		661A78012353326B0042D280 /* FirstStepResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstStepResponseModel.swift; sourceTree = "<group>"; };
 		661A78022353326B0042D280 /* AdRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdRequestModel.swift; sourceTree = "<group>"; };
 		661A78032353326B0042D280 /* GetAdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdResponseModel.swift; sourceTree = "<group>"; };
@@ -49,19 +48,22 @@
 		661A78082353326B0042D280 /* DeviceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceExtensions.swift; sourceTree = "<group>"; };
 		661A78092353326B0042D280 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		661A780A2353326B0042D280 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
-		661A780C2353326B0042D280 /* AdHashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashView.swift; sourceTree = "<group>"; };
-		661A780E2353326B0042D280 /* AdHashViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashViewDelegate.swift; sourceTree = "<group>"; };
-		661A78112353326B0042D280 /* ConnectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
-		661A78142353326B0042D280 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		661A78162353326B0042D280 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
-		661A78172353326B0042D280 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		661A78192353326B0042D280 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		661A781A2353326B0042D280 /* DecryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptionViewController.swift; sourceTree = "<group>"; };
-		66C597D023534C50007CAF0D /* RecentAdModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecentAdModel.xcdatamodel; sourceTree = "<group>"; };
-		66C597D623534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		66C597D723534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		66C597DC23534EF3007CAF0D /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
-		66C597DE2353512D007CAF0D /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		6695E73723609A6D00A80ED2 /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		6695E73823609A6D00A80ED2 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		6695E73B23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6695E73C23609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6695E73E23609A7F00A80ED2 /* RecentAdModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecentAdModel.xcdatamodel; sourceTree = "<group>"; };
+		6695E74323609A8D00A80ED2 /* adhashLogo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = adhashLogo.pdf; sourceTree = "<group>"; };
+		6695E74723609AB400A80ED2 /* ConnectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
+		6695E74A23609AB400A80ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6695E74C23609AB400A80ED2 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		6695E74D23609AB400A80ED2 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		6695E74F23609AB400A80ED2 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		6695E75023609AB400A80ED2 /* DecryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptionViewController.swift; sourceTree = "<group>"; };
+		6695E75823609AD200A80ED2 /* AdHashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashView.swift; sourceTree = "<group>"; };
+		6695E75A23609AD200A80ED2 /* AdHashViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashViewDelegate.swift; sourceTree = "<group>"; };
+		6695E75E23609AE900A80ED2 /* AdHashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashManager.swift; sourceTree = "<group>"; };
+		6695E75F23609AE900A80ED2 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,25 +96,17 @@
 		661A77E92353322E0042D280 /* AdHash-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6695E75D23609AE900A80ED2 /* Configuration */,
+				6695E75723609AD200A80ED2 /* Views */,
+				6695E74223609A8D00A80ED2 /* Resources */,
 				66C597CE23534C2C007CAF0D /* CoreData */,
-				661A77FD2353326B0042D280 /* Configuration */,
 				661A78002353326B0042D280 /* Models */,
 				661A78042353326B0042D280 /* Extensions */,
-				661A780B2353326B0042D280 /* Views */,
-				661A780F2353326B0042D280 /* Services */,
+				6695E74523609AB400A80ED2 /* Services */,
 				661A77EA2353322E0042D280 /* AdHash_iOS.h */,
 				661A77EB2353322E0042D280 /* Info.plist */,
 			);
 			path = "AdHash-iOS";
-			sourceTree = "<group>";
-		};
-		661A77FD2353326B0042D280 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				661A77FE2353326B0042D280 /* AdHashManager.swift */,
-				661A77FF2353326B0042D280 /* EventManager.swift */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		661A78002353326B0042D280 /* Models */ = {
@@ -138,74 +132,91 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		661A780B2353326B0042D280 /* Views */ = {
+		6695E74223609A8D00A80ED2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				661A780C2353326B0042D280 /* AdHashView.swift */,
-				661A780D2353326B0042D280 /* Delegates */,
+				6695E74323609A8D00A80ED2 /* adhashLogo.pdf */,
 			);
-			path = Views;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		661A780D2353326B0042D280 /* Delegates */ = {
+		6695E74523609AB400A80ED2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				661A780E2353326B0042D280 /* AdHashViewDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		661A780F2353326B0042D280 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				661A78102353326B0042D280 /* Connection */,
-				661A78122353326B0042D280 /* Networking */,
-				661A78182353326B0042D280 /* Decryption */,
+				6695E74623609AB400A80ED2 /* Connection */,
+				6695E74823609AB400A80ED2 /* Networking */,
+				6695E74E23609AB400A80ED2 /* Decryption */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		661A78102353326B0042D280 /* Connection */ = {
+		6695E74623609AB400A80ED2 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				661A78112353326B0042D280 /* ConnectionService.swift */,
+				6695E74723609AB400A80ED2 /* ConnectionService.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
 		};
-		661A78122353326B0042D280 /* Networking */ = {
+		6695E74823609AB400A80ED2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				661A78132353326B0042D280 /* Manager */,
-				661A78152353326B0042D280 /* RequestBuilder */,
+				6695E74923609AB400A80ED2 /* Manager */,
+				6695E74B23609AB400A80ED2 /* RequestBuilder */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		661A78132353326B0042D280 /* Manager */ = {
+		6695E74923609AB400A80ED2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				661A78142353326B0042D280 /* NetworkManager.swift */,
+				6695E74A23609AB400A80ED2 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		661A78152353326B0042D280 /* RequestBuilder */ = {
+		6695E74B23609AB400A80ED2 /* RequestBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				661A78162353326B0042D280 /* RequestBuilder.swift */,
-				661A78172353326B0042D280 /* HTTPMethod.swift */,
+				6695E74C23609AB400A80ED2 /* RequestBuilder.swift */,
+				6695E74D23609AB400A80ED2 /* HTTPMethod.swift */,
 			);
 			path = RequestBuilder;
 			sourceTree = "<group>";
 		};
-		661A78182353326B0042D280 /* Decryption */ = {
+		6695E74E23609AB400A80ED2 /* Decryption */ = {
 			isa = PBXGroup;
 			children = (
-				661A78192353326B0042D280 /* index.html */,
-				661A781A2353326B0042D280 /* DecryptionViewController.swift */,
+				6695E74F23609AB400A80ED2 /* index.html */,
+				6695E75023609AB400A80ED2 /* DecryptionViewController.swift */,
 			);
 			path = Decryption;
+			sourceTree = "<group>";
+		};
+		6695E75723609AD200A80ED2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6695E75823609AD200A80ED2 /* AdHashView.swift */,
+				6695E75923609AD200A80ED2 /* Delegates */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6695E75923609AD200A80ED2 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				6695E75A23609AD200A80ED2 /* AdHashViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		6695E75D23609AE900A80ED2 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6695E75E23609AE900A80ED2 /* AdHashManager.swift */,
+				6695E75F23609AE900A80ED2 /* EventManager.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		66C597CE23534C2C007CAF0D /* CoreData */ = {
@@ -220,9 +231,9 @@
 		66C597DA23534EDC007CAF0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				66C597D623534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift */,
-				66C597D723534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift */,
-				66C597CF23534C50007CAF0D /* RecentAdModel.xcdatamodeld */,
+				6695E73D23609A7F00A80ED2 /* RecentAdModel.xcdatamodeld */,
+				6695E73B23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift */,
+				6695E73C23609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -230,8 +241,8 @@
 		66C597DB23534EE5007CAF0D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				66C597DE2353512D007CAF0D /* PersistenceService.swift */,
-				66C597DC23534EF3007CAF0D /* CoreDataService.swift */,
+				6695E73823609A6D00A80ED2 /* CoreDataService.swift */,
+				6695E73723609A6D00A80ED2 /* PersistenceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,7 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				661A782C2353326B0042D280 /* index.html in Resources */,
+				6695E74423609A8D00A80ED2 /* adhashLogo.pdf in Resources */,
+				6695E75523609AB400A80ED2 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,29 +328,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				661A78272353326B0042D280 /* AdHashViewDelegate.swift in Sources */,
+				6695E75323609AB400A80ED2 /* RequestBuilder.swift in Sources */,
 				661A78232353326B0042D280 /* DeviceExtensions.swift in Sources */,
 				661A78222353326B0042D280 /* StringExtensions.swift in Sources */,
-				661A781C2353326B0042D280 /* EventManager.swift in Sources */,
+				6695E73923609A6D00A80ED2 /* PersistenceService.swift in Sources */,
 				661A78212353326B0042D280 /* DictionaryExtensions.swift in Sources */,
-				66C597D823534E3C007CAF0D /* RecentAdModel+CoreDataClass.swift in Sources */,
+				6695E75623609AB400A80ED2 /* DecryptionViewController.swift in Sources */,
 				661A78252353326B0042D280 /* UIApplicationExtensions.swift in Sources */,
-				66C597D923534E3C007CAF0D /* RecentAdModel+CoreDataProperties.swift in Sources */,
-				66C597DD23534EF3007CAF0D /* CoreDataService.swift in Sources */,
+				6695E74023609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift in Sources */,
+				6695E74123609A7F00A80ED2 /* RecentAdModel.xcdatamodeld in Sources */,
 				661A781F2353326B0042D280 /* GetAdResponseModel.swift in Sources */,
-				661A78282353326B0042D280 /* ConnectionService.swift in Sources */,
+				6695E73F23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift in Sources */,
 				661A78202353326B0042D280 /* CharacterSetExtensions.swift in Sources */,
-				661A78262353326B0042D280 /* AdHashView.swift in Sources */,
+				6695E75223609AB400A80ED2 /* NetworkManager.swift in Sources */,
+				6695E75423609AB400A80ED2 /* HTTPMethod.swift in Sources */,
+				6695E75123609AB400A80ED2 /* ConnectionService.swift in Sources */,
+				6695E75C23609AD200A80ED2 /* AdHashViewDelegate.swift in Sources */,
 				661A781D2353326B0042D280 /* FirstStepResponseModel.swift in Sources */,
+				6695E75B23609AD200A80ED2 /* AdHashView.swift in Sources */,
 				661A781E2353326B0042D280 /* AdRequestModel.swift in Sources */,
-				661A782B2353326B0042D280 /* HTTPMethod.swift in Sources */,
-				661A78292353326B0042D280 /* NetworkManager.swift in Sources */,
 				661A78242353326B0042D280 /* Reachability.swift in Sources */,
-				661A782D2353326B0042D280 /* DecryptionViewController.swift in Sources */,
-				66C597D123534C50007CAF0D /* RecentAdModel.xcdatamodeld in Sources */,
-				661A781B2353326B0042D280 /* AdHashManager.swift in Sources */,
-				66C597DF2353512D007CAF0D /* PersistenceService.swift in Sources */,
-				661A782A2353326B0042D280 /* RequestBuilder.swift in Sources */,
+				6695E76123609AE900A80ED2 /* EventManager.swift in Sources */,
+				6695E76023609AE900A80ED2 /* AdHashManager.swift in Sources */,
+				6695E73A23609A6D00A80ED2 /* CoreDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,13 +551,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		66C597CF23534C50007CAF0D /* RecentAdModel.xcdatamodeld */ = {
+		6695E73D23609A7F00A80ED2 /* RecentAdModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				66C597D023534C50007CAF0D /* RecentAdModel.xcdatamodel */,
+				6695E73E23609A7F00A80ED2 /* RecentAdModel.xcdatamodel */,
 			);
-			currentVersion = 66C597D023534C50007CAF0D /* RecentAdModel.xcdatamodel */;
-			path = RecentAdModel.xcdatamodeld;
+			currentVersion = 6695E73E23609A7F00A80ED2 /* RecentAdModel.xcdatamodel */;
+			name = RecentAdModel.xcdatamodeld;
+			path = ../../../../OnlyTestADHASH/OnlyTestADHASH/FrameworkFiles/CoreData/Resources/RecentAdModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
