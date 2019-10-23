@@ -7,7 +7,7 @@ s.name = "AdHash-iOS"
 s.summary = "Library for AdHash using."
 s.requires_arc = true
 
-s.version = "0.4.0"
+s.version = "0.5.0"
 
 s.authors = { 'Dima Senchik' => 'dmitriy.senchik@gmail.com' }
 
@@ -18,7 +18,7 @@ s.source = { :git => "https://github.com/dimasenchik/AdHash-iOS.git",
 
 s.source_files = "AdHash-iOS/**/*.{swift}"
 
-s.resources = "AdHash-iOS/**/*.{xcdatamodeld, pdf, html}"
+s.resources = [ 'AdHash-iOS/CoreData/Resources/RecentAdModel.xcdatamodeld','AdHash-iOS/CoreData/Resources/RecentAdModel.xcdatamodeld/*.xcdatamodel', 'AdHash-iOS/Services/Decryption/index.html', 'AdHash-iOS/Resources/adhashLogo.pdf']
 
 s.swift_version = "5.0"
 
