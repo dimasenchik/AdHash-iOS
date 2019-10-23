@@ -81,8 +81,9 @@ public class AdHashView: UIView {
     }
 	
 	private func setLogo() {
-		let logo = UIImage(named: "adhashLogo.pdf")
-		logoImage.image = logo
+		if let filePath = Bundle(for: DecryptionViewController.self).path(forResource: "adhashLogo", ofType: "png"), let image = UIImage(contentsOfFile: filePath) {
+			logoImage.image = image
+		}
 	}
 	
 	@objc private func tapOnBanner(touch: UITapGestureRecognizer) {

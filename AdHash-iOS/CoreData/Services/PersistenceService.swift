@@ -18,13 +18,18 @@ class PersistenceService {
     }
     
     static var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "RecentAdModel")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
+		let modelURL = Bundle(for: DecryptionViewController.self).url(forResource: "RecentAdModel", withExtension:"momd")
+		if let objectModel = NSManagedObjectModel(contentsOf: modelURL!) {
+			let container = NSPersistentContainer(name: "RecentAdModel", managedObjectModel: objectModel)
+			container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+				if let error = error as NSError? {
+					fatalError("Unresolved error \(error), \(error.userInfo)")
+				}
+			})
+			return container
+		}
+		
+		return NSPersistentContainer()
     }()
     
     static func saveContext () {

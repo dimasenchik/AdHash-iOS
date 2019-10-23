@@ -22,7 +22,6 @@
 		6695E73F23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73B23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift */; };
 		6695E74023609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73C23609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift */; };
 		6695E74123609A7F00A80ED2 /* RecentAdModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73D23609A7F00A80ED2 /* RecentAdModel.xcdatamodeld */; };
-		6695E74423609A8D00A80ED2 /* adhashLogo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6695E74323609A8D00A80ED2 /* adhashLogo.pdf */; };
 		6695E75123609AB400A80ED2 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74723609AB400A80ED2 /* ConnectionService.swift */; };
 		6695E75223609AB400A80ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74A23609AB400A80ED2 /* NetworkManager.swift */; };
 		6695E75323609AB400A80ED2 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E74C23609AB400A80ED2 /* RequestBuilder.swift */; };
@@ -33,6 +32,7 @@
 		6695E75C23609AD200A80ED2 /* AdHashViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75A23609AD200A80ED2 /* AdHashViewDelegate.swift */; };
 		6695E76023609AE900A80ED2 /* AdHashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75E23609AE900A80ED2 /* AdHashManager.swift */; };
 		6695E76123609AE900A80ED2 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E75F23609AE900A80ED2 /* EventManager.swift */; };
+		66F2BD51236101DA00F30871 /* adhashLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F2BD50236101DA00F30871 /* adhashLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,6 @@
 		6695E73B23609A7F00A80ED2 /* RecentAdModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6695E73C23609A7F00A80ED2 /* RecentAdModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentAdModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6695E73E23609A7F00A80ED2 /* RecentAdModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecentAdModel.xcdatamodel; sourceTree = "<group>"; };
-		6695E74323609A8D00A80ED2 /* adhashLogo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = adhashLogo.pdf; sourceTree = "<group>"; };
 		6695E74723609AB400A80ED2 /* ConnectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		6695E74A23609AB400A80ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6695E74C23609AB400A80ED2 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		6695E75A23609AD200A80ED2 /* AdHashViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashViewDelegate.swift; sourceTree = "<group>"; };
 		6695E75E23609AE900A80ED2 /* AdHashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdHashManager.swift; sourceTree = "<group>"; };
 		6695E75F23609AE900A80ED2 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		66F2BD50236101DA00F30871 /* adhashLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adhashLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 		6695E74223609A8D00A80ED2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6695E74323609A8D00A80ED2 /* adhashLogo.pdf */,
+				66F2BD50236101DA00F30871 /* adhashLogo.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -316,8 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6695E74423609A8D00A80ED2 /* adhashLogo.pdf in Resources */,
 				6695E75523609AB400A80ED2 /* index.html in Resources */,
+				66F2BD51236101DA00F30871 /* adhashLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
