@@ -18,7 +18,7 @@ s.source = { :git => "https://github.com/dimasenchik/AdHash-iOS.git",
 
 s.source_files = "AdHash-iOS/**/*.{swift}"
 
-s.resources = [ 'AdHash-iOS/CoreData/Resources/RecentAdModel.xcdatamodeld','AdHash-iOS/CoreData/Resources/RecentAdModel.xcdatamodeld/*.xcdatamodel', 'AdHash-iOS/Services/Decryption/index.html', 'AdHash-iOS/Resources/adhashLogo.pdf']
+s.resources = [ 'AdHash-iOS/CoreData/Resources/RecentAdModel.xcdatamodeld','AdHash-iOS/CoreData/Resources/RecentAdModel.xcdatamodeld/*.xcdatamodel', 'AdHash-iOS/Services/Decryption/index.html', 'AdHash-iOS/Resources/adhashLogo.png']
 
 s.swift_version = "5.0"
 
