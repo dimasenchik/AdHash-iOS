@@ -14,7 +14,6 @@
 		661A78202353326B0042D280 /* CharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78052353326B0042D280 /* CharacterSetExtensions.swift */; };
 		661A78212353326B0042D280 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78062353326B0042D280 /* DictionaryExtensions.swift */; };
 		661A78222353326B0042D280 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78072353326B0042D280 /* StringExtensions.swift */; };
-		661A78232353326B0042D280 /* DeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78082353326B0042D280 /* DeviceExtensions.swift */; };
 		661A78242353326B0042D280 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A78092353326B0042D280 /* Reachability.swift */; };
 		661A78252353326B0042D280 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A780A2353326B0042D280 /* UIApplicationExtensions.swift */; };
 		6695E73923609A6D00A80ED2 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E73723609A6D00A80ED2 /* PersistenceService.swift */; };
@@ -45,7 +44,6 @@
 		661A78052353326B0042D280 /* CharacterSetExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetExtensions.swift; sourceTree = "<group>"; };
 		661A78062353326B0042D280 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		661A78072353326B0042D280 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		661A78082353326B0042D280 /* DeviceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceExtensions.swift; sourceTree = "<group>"; };
 		661A78092353326B0042D280 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		661A780A2353326B0042D280 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		6695E73723609A6D00A80ED2 /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				661A78052353326B0042D280 /* CharacterSetExtensions.swift */,
 				661A78062353326B0042D280 /* DictionaryExtensions.swift */,
 				661A78072353326B0042D280 /* StringExtensions.swift */,
-				661A78082353326B0042D280 /* DeviceExtensions.swift */,
 				661A78092353326B0042D280 /* Reachability.swift */,
 				661A780A2353326B0042D280 /* UIApplicationExtensions.swift */,
 			);
@@ -329,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6695E75323609AB400A80ED2 /* RequestBuilder.swift in Sources */,
-				661A78232353326B0042D280 /* DeviceExtensions.swift in Sources */,
 				661A78222353326B0042D280 /* StringExtensions.swift in Sources */,
 				6695E73923609A6D00A80ED2 /* PersistenceService.swift in Sources */,
 				661A78212353326B0042D280 /* DictionaryExtensions.swift in Sources */,

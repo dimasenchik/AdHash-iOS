@@ -13,7 +13,7 @@ final class ConnectionService {
     
     static func getConnectionType() -> String {
         do {
-            try Network.reachability = Reachability(hostname: "www.google.com")
+            try Network.reachability = Reachability(hostname: "www.bidder.adhash.org/protocol.php")
         }
         catch {
             switch error as? Network.Error {

@@ -21,7 +21,6 @@ public class AdHashView: UIView {
 			AdHashManager.configurateManager(didGetData: { [weak self] adModel in
 				DispatchQueue.main.async {
 					self?.adInfo = adModel
-					self?.configureGestures()
 					self?.setBannerImage()
 					self?.setLogo()
 				}
@@ -44,11 +43,9 @@ public class AdHashView: UIView {
 		let bottomConstraint = bannerImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
 		NSLayoutConstraint.activate([trailingConstraint, leadingConstraint, topConstraint, bottomConstraint])
 		self.layoutSubviews()
-		logoImage.frame = CGRect(x: 10, y: self.frame.size.height - 30, width: 20, height: 20)
-		logoImage.isUserInteractionEnabled = true
-		self.addSubview(logoImage)
 		NotificationCenter.default.addObserver(self, selector: #selector(screenshotTaken), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
 		setLogo()
+		configureGestures()
 	}
     
     //MARK: - Private methods
@@ -81,6 +78,13 @@ public class AdHashView: UIView {
     }
 	
 	private func setLogo() {
+		self.addSubview(logoImage)
+		logoImage.translatesAutoresizingMaskIntoConstraints = false
+		logoImage.heightAnchor.constraint(equalToConstant: 20).isActive = true
+		logoImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+		logoImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+		logoImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+		logoImage.isUserInteractionEnabled = true
 		if let filePath = Bundle(for: DecryptionViewController.self).path(forResource: "adhashLogo", ofType: "png"), let image = UIImage(contentsOfFile: filePath) {
 			logoImage.image = image
 		}

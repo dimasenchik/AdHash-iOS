@@ -10,6 +10,24 @@ import Foundation
 import CoreLocation
 import UIKit
 
+public struct AdHashConfig {
+	let publisherID: String
+	let analyticsURL: String
+	let bidderURL: String
+	let publisherURL: String
+	let reportURL: String
+	let apiVersion: Float
+	
+	public init(publisherID: String, analyticsURL: String, bidderURL: String, publisherURL: String, reportURL: String, apiVersion: Float) {
+        self.publisherID = publisherID
+        self.analyticsURL = analyticsURL
+        self.bidderURL = bidderURL
+		self.publisherURL = publisherURL
+        self.reportURL = reportURL
+        self.apiVersion = apiVersion
+    }
+}
+
 open class AdHashManager {
     
     //MARK: - Properties
@@ -34,7 +52,15 @@ open class AdHashManager {
         return "Apple"
     }
     public static var model: String {
-        return UIDevice.current.type.rawValue
+		var systemInfo = utsname()
+        uname(&systemInfo)
+		let modelCode = withUnsafePointer(to: &systemInfo.machine) {
+            $0.withMemoryRebound(to: CChar.self, capacity: 1) {
+                ptr in String.init(validatingUTF8: ptr)
+            }
+        }
+		let stringCode = String.init(validatingUTF8: modelCode!)!
+        return stringCode
     }
     public static var type: String {
         if UIDevice.current.model == "iPhone" {
@@ -96,6 +122,15 @@ open class AdHashManager {
 	var adInfoModel = AdRequestModel()
     
     //MARK: - Public methods
+	public static func setConfig(_ config: AdHashConfig) {
+		AdHashManager.publisherID = config.publisherID
+		AdHashManager.analyticsURL = config.analyticsURL
+		AdHashManager.bidderURL = config.bidderURL
+		AdHashManager.publisherURL = config.publisherURL
+		AdHashManager.reportURL = config.reportURL
+		AdHashManager.apiVersion = config.apiVersion
+	}
+	
 	static func configurateManager(didGetData: @escaping ((AdRequestModel) -> Void)) {
 		if !UIAccessibility.isVoiceOverRunning {
 			let body: [String: Any] =
