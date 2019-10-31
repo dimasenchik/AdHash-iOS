@@ -4,13 +4,14 @@
 #### 1. Install pod 'AdHash-iOS'
 #### 2. Conform your UIView to AdHashView
 #### 3. Configure AdHashManager in AppDelegate file:
-    	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    		AdHashManager.publisherID = "0x89c430444df3dc8329aba2c409770fa196b65d3c"
-    		AdHashManager.analyticsURL = "https://bidder.adhash.org/protocol.php?action=rtb_sdk"
-    		AdHashManager.bidderURL = "https://adhash.org/bidder/protocol.php?action=click"
-    		AdHashManager.publisherURL = "https://publisher.whatismycar.com/protocol.php?action=click"
-    		AdHashManager.reportURL = "https://google.com.ua"
-    		AdHashManager.apiVersion = 1.0
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    		let config = AdHashConfig(publisherID: "0x89c430444df3dc8329aba2c409770fa196b65d3c",
+    								  analyticsURL: "https://bidder.adhash.org/protocol.php?action=rtb_sdk",
+    								  bidderURL: "https://adhash.org/bidder/protocol.php?action=click",
+    								  publisherURL: "https://publisher.whatismycar.com/protocol.php?action=click",
+    								  reportURL: "https://google.com.ua",
+    								  apiVersion: 1.0)
+    		AdHashManager.setConfig(config)
     		return true
     	}
 #### 4. Setup your ViewController:
@@ -73,4 +74,3 @@
 #### Available delegate methods:
     func didClickOnAd(adId: String)
     func didClickOnReport(adId: String)
-
