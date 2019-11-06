@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.ios.deployment_target = '12.0'
+s.ios.deployment_target = '10.0'
 s.name = "AdHash-iOS"
 s.summary = "Library for AdHash using."
 s.requires_arc = true
 
-s.version = "0.7.0"
+s.version = "0.8.0"
 
 s.authors = { 'Dima Senchik' => 'dmitriy.senchik@gmail.com' }
 

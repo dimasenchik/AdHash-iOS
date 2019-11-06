@@ -11,46 +11,34 @@ import CoreLocation
 import UIKit
 
 public struct AdHashConfig {
-	let publisherID: String
-	let analyticsURL: String
-	let bidderURL: String
-	let publisherURL: String
-	let reportURL: String
-	let apiVersion: Float
+	var publisherID = ""
+	var analyticsURL = ""
+	var bidderURL = ""
+	var publisherURL = ""
+	var reportURL = ""
+	var apiVersion = Float(0)
 	
 	public init(publisherID: String, analyticsURL: String, bidderURL: String, publisherURL: String, reportURL: String, apiVersion: Float) {
-        self.publisherID = publisherID
-        self.analyticsURL = analyticsURL
-        self.bidderURL = bidderURL
+		self.publisherID = publisherID
+		self.analyticsURL = analyticsURL
+		self.bidderURL = bidderURL
 		self.publisherURL = publisherURL
-        self.reportURL = reportURL
-        self.apiVersion = apiVersion
-    }
+		self.reportURL = reportURL
+		self.apiVersion = apiVersion
+	}
 }
 
 open class AdHashManager {
     
     //MARK: - Properties
-    public static var timeZone: Int = TimeZone.current.secondsFromGMT()/3600
-	public static var location: String {
-		if let id = Bundle.main.bundleIdentifier {
-			return id
-		} else {
-			return ""
-		}
-	}
-    public static var publisherID: String = ""
-    public static var screenWidth: CGFloat = UIScreen.main.bounds.width
-    public static var screenHeight: CGFloat = UIScreen.main.bounds.height
-    public static var platform: String {
-        return UIDevice.current.model
-    }
-    public static var language: String {
-        return Locale.current.identifier
-    }
-    private static var device: String {
-        return "Apple"
-    }
+    public static var timeZone = TimeZone.current.secondsFromGMT()/3600
+	public static var location = Bundle.main.bundleIdentifier ?? ""
+    public static var publisherID = ""
+    public static var screenWidth = UIScreen.main.bounds.width
+    public static var screenHeight = UIScreen.main.bounds.height
+    public static var platform = UIDevice.current.model
+    public static var language = Locale.current.identifier
+    private static var device = "Apple"
     public static var model: String {
 		var systemInfo = utsname()
         uname(&systemInfo)
@@ -69,14 +57,8 @@ open class AdHashManager {
             return "tablet"
         }
     }
-    public static var connection: String = ConnectionService.getConnectionType()
-    public static var isp: String {
-        if let carrierName = ConnectionService.getCarrierName() {
-            return carrierName
-        } else {
-            return ""
-        }
-    }
+    public static var connection = ConnectionService.getConnectionType()
+    public static var isp = ConnectionService.getCarrierName() ?? ""
     public static var orientation: String {
         if UIDevice.current.orientation.isPortrait {
             return "portrait"
@@ -100,22 +82,20 @@ open class AdHashManager {
             return ""
         }
     }
-    public static var bannerWidth: CGFloat = 0.0
-    public static var bannerHeight: CGFloat = 0.0
+    public static var bannerWidth = 0.0
+    public static var bannerHeight = 0.0
     private static var isMobile: Bool = true
     public static var blockedAdvertisers: [String] = []
-    public static var currentTimestamp: String = "\(Int(Date().timeIntervalSince1970))"
-	public static var recentAds: [[Any]] {
-		return CoreDataService.getRecentAds()
-	}
+    public static var currentTimestamp = "\(Int(Date().timeIntervalSince1970))"
+	public static var recentAds = CoreDataService.getRecentAds()
 	public static var apiVersion: Float = 1.0
 	
 	//Configuration links
-	public static var analyticsURL: String = ""
-	public static var analyticsScreenShotURL: String = ""
-	public static var bidderURL: String = ""
-	public static var publisherURL: String = ""
-	public static var reportURL: String = ""
+	public static var analyticsURL = ""
+	public static var analyticsScreenShotURL = ""
+	public static var bidderURL = ""
+	public static var publisherURL = ""
+	public static var reportURL = ""
 	
 	static let shared = AdHashManager()
 	private var didGetAdInfo: () -> () = {}

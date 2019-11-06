@@ -85,7 +85,8 @@ public class AdHashView: UIView {
 		logoImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
 		logoImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
 		logoImage.isUserInteractionEnabled = true
-		if let filePath = Bundle(for: DecryptionViewController.self).path(forResource: "adhashLogo", ofType: "png"), let image = UIImage(contentsOfFile: filePath) {
+		if let filePath = Bundle(for: DecryptionViewController.self).path(forResource: "adhashLogo", ofType: "png"),
+			let image = UIImage(contentsOfFile: filePath) {
 			logoImage.image = image
 		}
 	}
@@ -93,9 +94,7 @@ public class AdHashView: UIView {
 	@objc private func tapOnBanner(touch: UITapGestureRecognizer) {
 		if adInfo.bannerURL != "" {
 			EventManager.getClickableURL(adInfo: adInfo, tapCoordinates: touch.location(in: self)) { [weak self] (clickableURL) in
-				if let adId = self?.adInfo.adTagId {
-					self?.delegate?.didClickOnAd(adId: adId)
-				}
+				self?.delegate?.didClickOnAd(adId: self?.adInfo.adTagId ?? "No id")
 				let safariController = SFSafariViewController(url: clickableURL)
 				self?.delegate?.present(safariController, animated: true, completion: nil)
 			}

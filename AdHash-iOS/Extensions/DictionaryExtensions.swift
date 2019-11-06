@@ -11,7 +11,7 @@ import Foundation
 extension Dictionary {
     var json: String {
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .sortedKeys)
+			let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
             return String(bytes: jsonData, encoding: String.Encoding.utf8) ?? "Not a valid JSON"
         } catch {
             return "Not a valid JSON"
