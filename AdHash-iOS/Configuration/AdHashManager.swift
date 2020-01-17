@@ -77,6 +77,12 @@ open class AdHashManager {
                 } else {
                     return ""
                 }
+            @unknown default:
+                if let location = CLLocationManager().location {
+                    return "\(location.coordinate.longitude), \(location.coordinate.latitude)"
+                } else {
+                    return ""
+                }
             }
         } else {
             return ""
@@ -111,56 +117,54 @@ open class AdHashManager {
 		AdHashManager.apiVersion = config.apiVersion
 	}
 	
-	static func configurateManager(didGetData: @escaping ((AdRequestModel) -> Void)) {
-		if !UIAccessibility.isVoiceOverRunning {
-			let body: [String: Any] =
-				[
-					"timezone": timeZone,
-					"location": AdHashManager.location,
-					"publisherId": publisherID,
-					"size": ["screenWidth": screenWidth, "screenHeight": screenHeight],
-					"navigator": ["platform": AdHashManager.platform, "language": AdHashManager.language, "device": AdHashManager.device, "model": AdHashManager.model, "type": AdHashManager.type],
-					"connection": connection,
-					"isp": AdHashManager.isp,
-					"orientation": AdHashManager.orientation,
-					"gps": AdHashManager.gps,
-					"creatives": [["size": "\(Int(bannerWidth))x\(Int(bannerHeight))"]],
-					"mobile": isMobile,
-					"blockedAdvertisers": blockedAdvertisers,
-					"currentTimestamp": currentTimestamp,
-					"recentAds": recentAds
-			]
-			
-			guard let request = RequestBuilder.build(.post, headersType: .typical, body: body, requestType: .firstStep) else { return }
-			
-			NetworkManager.shared.perform(request, onSuccess: { (data) in
-				do {
-					let responseModel = try JSONDecoder().decode(FirstStepResponseModel.self, from: data)
-					
-					shared.adInfoModel.period = responseModel.period
-					shared.adInfoModel.cost = responseModel.creatives[0].maxPrice
-					shared.adInfoModel.commission = responseModel.creatives[0].commission
-					shared.adInfoModel.nonce = responseModel.nonce
-					shared.adInfoModel.budgetId = responseModel.creatives[0].budgetId
-					shared.adInfoModel.advertiserId = responseModel.creatives[0].advertiserId
-					shared.adInfoModel.bidId = responseModel.creatives[0].bidId
-					
-					shared.getAd(advertiserURL: responseModel.creatives[0].advertiserURL, expectedHashes: responseModel.creatives[0].expectedHashes, budgetId: responseModel.creatives[0].budgetId, period: responseModel.period, nonce: responseModel.nonce)
-				} catch {
-					return
-				}
-			}) { (error) in
-				print(error.message)
-			}
-			
-			shared.didGetAdInfo = {
-				CoreDataService.addNewAd(adInfo: shared.adInfoModel)
-				didGetData(shared.adInfoModel)
-			}
-			
-		}
-		
-	}
+    static func configurateManager(didGetData: @escaping ((AdRequestModel) -> Void)) {
+        if !UIAccessibility.isVoiceOverRunning {
+            let body: [String: Any] =
+                [
+                    "timezone": timeZone,
+                    "location": AdHashManager.location,
+                    "publisherId": publisherID,
+                    "size": ["screenWidth": screenWidth, "screenHeight": screenHeight],
+                    "navigator": ["platform": AdHashManager.platform, "language": AdHashManager.language, "device": AdHashManager.device, "model": AdHashManager.model, "type": AdHashManager.type],
+                    "connection": connection,
+                    "isp": AdHashManager.isp,
+                    "orientation": AdHashManager.orientation,
+                    "gps": AdHashManager.gps,
+                    "creatives": [["size": "\(Int(bannerWidth))x\(Int(bannerHeight))"]],
+                    "mobile": isMobile,
+                    "blockedAdvertisers": blockedAdvertisers,
+                    "currentTimestamp": currentTimestamp,
+                    "recentAds": recentAds
+            ]
+            
+            guard let request = RequestBuilder.build(.post, headersType: .typical, body: body, requestType: .firstStep) else { return }
+            
+            NetworkManager.shared.perform(request) { data, error in
+                if let data = data {
+                    do {
+                        let responseModel = try JSONDecoder().decode(FirstStepResponseModel.self, from: data)
+                        
+                        shared.adInfoModel.period = responseModel.period
+                        shared.adInfoModel.cost = responseModel.creatives[0].maxPrice
+                        shared.adInfoModel.commission = responseModel.creatives[0].commission
+                        shared.adInfoModel.nonce = responseModel.nonce
+                        shared.adInfoModel.budgetId = responseModel.creatives[0].budgetId
+                        shared.adInfoModel.advertiserId = responseModel.creatives[0].advertiserId
+                        shared.adInfoModel.bidId = responseModel.creatives[0].bidId
+                        
+                        shared.getAd(advertiserURL: responseModel.creatives[0].advertiserURL, expectedHashes: responseModel.creatives[0].expectedHashes, budgetId: responseModel.creatives[0].budgetId, period: responseModel.period, nonce: responseModel.nonce)
+                    } catch {
+                        return
+                    }
+                    
+                    shared.didGetAdInfo = {
+                        CoreDataService.addNewAd(adInfo: shared.adInfoModel)
+                        didGetData(shared.adInfoModel)
+                    }
+                }
+            }
+        }
+    }
     
     private func getAd(advertiserURL: String, expectedHashes: [String], budgetId: Int, period: Int, nonce: Int) {
         let body: [String: Any] =
@@ -170,7 +174,7 @@ open class AdHashManager {
                 "timezone": AdHashManager.timeZone,
                 "location": AdHashManager.location,
                 "publisherId": AdHashManager.publisherID,
-				"size": ["screenWidth": AdHashManager.screenWidth, "screenHeight": AdHashManager.screenHeight],
+                "size": ["screenWidth": AdHashManager.screenWidth, "screenHeight": AdHashManager.screenHeight],
                 "navigator": ["platform": AdHashManager.platform, "language": AdHashManager.language, "device": AdHashManager.device, "model": AdHashManager.model, "type": AdHashManager.type],
                 "connection": AdHashManager.connection,
                 "isp": AdHashManager.isp,
@@ -185,33 +189,32 @@ open class AdHashManager {
                 "nonce": nonce
         ]
         
-		guard let request = RequestBuilder.build(.post, baseUrl: advertiserURL, headersType: .typical, body: body, requestType: .none) else { return }
+        guard let request = RequestBuilder.build(.post, baseUrl: advertiserURL, headersType: .typical, body: body, requestType: .none) else { return }
         
-        NetworkManager.shared.perform(request, onSuccess: { (data) in
-            do {
-                let responseModel = try JSONDecoder().decode(GetAdResponseModel.self, from: data)
-                let sha1Data = responseModel.data.sha1()
-				
-				let decodedData = Data(base64Encoded: responseModel.data.components(separatedBy: "base64,")[1], options: [])
-				if let data = decodedData {
-					if let decodedImage = UIImage(data: data) {
-						AdHashManager.shared.adInfoModel.bannerImage = decodedImage
-					}
-				} else {
-					print("error with decodedData")
-				}
-				
-                if expectedHashes.contains(sha1Data) {
-					AdHashManager.shared.adInfoModel.creativeHash = sha1Data
-					self.decryptAdvertiserURL(encodedUrl: responseModel.url, period: period, nonce: nonce, adID: sha1Data)
+        NetworkManager.shared.perform(request) { [weak self] data, error in
+            if let data = data {
+                do {
+                    let responseModel = try JSONDecoder().decode(GetAdResponseModel.self, from: data)
+                    let sha1Data = responseModel.data.sha1()
+                    
+                    let decodedData = Data(base64Encoded: responseModel.data.components(separatedBy: "base64,")[1], options: [])
+                    if let data = decodedData {
+                        if let decodedImage = UIImage(data: data) {
+                            AdHashManager.shared.adInfoModel.bannerImage = decodedImage
+                        }
+                    } else {
+                        print("error with decodedData")
+                    }
+                    
+                    if expectedHashes.contains(sha1Data) {
+                        AdHashManager.shared.adInfoModel.creativeHash = sha1Data
+                        self?.decryptAdvertiserURL(encodedUrl: responseModel.url, period: period, nonce: nonce, adID: sha1Data)
+                    }
+                } catch {
+                    return
                 }
-            } catch {
-                return
             }
-        }) { (error) in
-            print(error.message)
         }
-        
     }
     
 	private func decryptAdvertiserURL(encodedUrl: String, period: Int, nonce: Int, adID: String) {

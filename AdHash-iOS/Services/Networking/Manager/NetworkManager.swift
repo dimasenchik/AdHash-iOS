@@ -12,14 +12,26 @@ typealias emptySuccess = (() -> ())
 typealias onSuccess<T> = ((T) -> ())
 typealias onFailure<T> = ((T) -> ())
 
-final class NetworkError {
-    let message: String
-    let statusCode: Int
-    
-    init(errorMessage: String, statusCode: Int) {
-        self.message = errorMessage
-        self.statusCode = statusCode
-    }
+//final class NetworkError {
+//    let message: String
+//    let statusCode: Int
+//
+//    init(errorMessage: String, statusCode: Int) {
+//        self.message = errorMessage
+//        self.statusCode = statusCode
+//    }
+//}
+
+enum NetworkError: Error {
+    case noInternet
+    case emptyData
+    case badRequest
+    case unAuthUser
+    case authFailed
+    case notFound
+    case validationError
+    case serverError
+    case unknownError
 }
 
 enum Result<String>{
@@ -38,10 +50,10 @@ struct NetworkManager {
     
     let session = URLSession.shared
     
-    func perform(_ request: URLRequest, onSuccess: @escaping ((Data) -> ()), onFailure: @escaping onFailure<NetworkError>) {
+    func perform(_ request: URLRequest, completion: @escaping ((Data?, NetworkError?) -> Void)) {
         session.dataTask(with: request, completionHandler: { (data, response, error) in
             guard error == nil else {
-                onFailure(NetworkError(errorMessage: "NetworkErrors.noInternet", statusCode: 1))
+                completion(nil, .noInternet)
                 return
             }
             
@@ -50,24 +62,24 @@ struct NetworkManager {
                 switch responseResult {
                 case 200 ..< 300:
                     guard let responseData = data else {
-                        onFailure(NetworkError(errorMessage: "NetworkErrors.emptyData", statusCode: response.statusCode))
+                        completion(nil, .emptyData)
                         return
                     }
-                    onSuccess(responseData)
+                    completion(responseData, nil)
                 case 400:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.badRequest", statusCode: 400))
+                    completion(nil, .badRequest)
                 case 401:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.unauthUser", statusCode: 401))
+                    completion(nil, .unAuthUser)
                 case 403:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.authFailed", statusCode: 403))
+                    completion(nil, .authFailed)
                 case 404:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.notFound", statusCode: 404))
+                    completion(nil, .notFound)
                 case 422:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.validationError", statusCode: 422))
+                    completion(nil, .validationError)
                 case 500 ..< 512:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.serverError", statusCode: response.statusCode))
+                    completion(nil, .serverError)
                 default:
-                    onFailure(NetworkError(errorMessage: "NetworkErrors.unknownError", statusCode: response.statusCode))
+                    completion(nil, .unknownError)
                 }
                 
             }

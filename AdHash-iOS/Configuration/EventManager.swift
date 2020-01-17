@@ -56,11 +56,11 @@ final class EventManager {
 		
 		guard let request = RequestBuilder.build(.get, baseUrl: type.analyticsURL, headersType: .typical, queryItems: parameters.queryString, requestType: .none) else { return }
 		
-		NetworkManager.shared.perform(request, onSuccess: { (data) in
-			onSuccess()
-		}) { (error) in
-			//error handling
-		}
+        NetworkManager.shared.perform(request) { _, error in
+            if error == nil {
+                onSuccess()
+            }
+        }
 	}
 	
 	static func getClickableURL(adInfo: AdRequestModel, tapCoordinates: CGPoint, onSuccess: @escaping onSuccess<URL>) {
