@@ -7,7 +7,7 @@ s.name = "AdHash-iOS"
 s.summary = "Library for AdHash using."
 s.requires_arc = true
 
-s.version = "1.5.0"
+s.version = "1.5.2"
 
 s.authors = { 'Dima Senchik' => 'dmitriy.senchik@gmail.com' }
 
